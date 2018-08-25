@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Learning WebRTC - Chapter 5</title>
+
+
+
+
+<!--
+	<style>
+   body {
+
+
+     background-color: #3d6df2 ;
+     margin-top: 15px;
+     font-family: sans-serif;
+     color: white;
+   }
+
+   h1{
+       text-align: center;
+       color: yellow;
+     }
+
+   video {
+       background: black;
+       border: 3px solid yellow;
+     }
+
+   .page {
+     position: relative;
+     display: block;
+     margin: 0 auto;
+     width: 500px;
+     height: 500px;
+   }
+
+   #localVideo {
+     width: 150px;
+     height: 150px;
+     position: absolute;
+     top: 15px;
+     right: 15px;
+      border-radius: 50%;
+   }
+
+   #remoteVideo {
+     width: 500px;
+     height: 500px;
+     border-radius: 50%;
+   }
+
+   #username{
+      width: 100px;
+     height: 25px;
+   }
+
+    #login{
+      width: 50px;
+     height: 25px;
+     background-color: yellow;
+
+   }
+
+   #remote-username{
+     width: 100px;
+     height: 25px;
+    float: left;
+    margin-left: 200px;
+
+   }
+
+   #call{
+      width: 100px;
+     height: 100px;
+     float: left;
+     margin-right: 200px;
+
+     background-color: green;
+     color: white;
+     border-radius: 50%;
+     font-size: 32px;
+     font-weight: bold;
+   }
+
+   #hang-up{
+      color: white;
+      width: 100px;
+     height: 100px;
+     float: right;
+     background-color: red;
+     border-radius: 50%;
+      font-size: 32px;
+     font-weight: bold;
+
+
+   }
+ </style>
+-->
+
+
+
+
+
+
+	<style>
+		body {
+			background-color: #3d6df2;
+			margin-top: 15px;
+			font-family: sans-serif;
+			color: white;
+		}
+
+		video {
+        background: black;
+        border: 1px solid gray;
+      }
+
+    .page {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 500px;
+      height: 500px;
+    }
+
+    #localVideo {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    #remoteVideo {
+      width: 500px;
+      height: 500px;
+    }
+	</style>
+
+
+
+
+
+</head>
+
+<body>
+	<div id="login-page" class="page">
+		<h2>Login As</h2>
+		<input type="text" id="username"/>
+		<button id="login">Login</button>
+	</div>
+
+	<div id="call-page" class="page">
+
+		<video id="localVideo" autoplay muted></video>
+		<video id="remoteVideo" autoplay></video>
+		<input type="text" id="remote-username"/>
+		<button id="call">Call</button>
+		<button id="hang-up">End</button>
+
+		<select id="video-devices"></select>
+		<select id="audio-devices"></select>
+
+		<p id="logged-in-as"></p>
+
+		<div id="user-list">
+			<ul>
+
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- <script src="node_modules/webrtc-adapter/out/adapter.js"></script> -->
+	<script src="client.js"></script>
+
+</body>
+
+</html>
