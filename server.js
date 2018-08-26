@@ -8,6 +8,8 @@ var options = {
   cert: fs.readFileSync('server.crt')
 };
 
+const PORT = process.env.PORT || 3000;
+
 var httpsServer = https.createServer(options, function(request, response) {
 	var pathname = url.parse(request.url).pathname;
 	console.log("Request for " + pathname + " received.");
@@ -24,7 +26,7 @@ var httpsServer = https.createServer(options, function(request, response) {
   		response.end();
   	});
 
-}).listen(3000);
+}).listen(PORT, () => console.log(`listening on ${ PORT }`));
 
 
 

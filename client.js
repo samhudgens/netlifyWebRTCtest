@@ -1,8 +1,8 @@
 var name;
 var connectedUser;
 
-
-var connection = new WebSocket('wss://10.0.0.25:3000');
+var HOST = location.origin.replace(/^http/, "ws");
+var connection = new WebSocket(HOST);
 
 var loginPage = document.querySelector('#login-page'),
 		usernameInput = document.querySelector('#username'),
