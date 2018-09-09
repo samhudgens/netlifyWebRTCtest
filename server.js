@@ -8,7 +8,7 @@ var options = {
   cert: fs.readFileSync('server.crt')
 };
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8443;
 
 var httpsServer = https.createServer(options, function(request, response) {
 	var pathname = url.parse(request.url).pathname;
