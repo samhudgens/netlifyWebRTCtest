@@ -2,7 +2,7 @@ var name;
 var connectedUser;
 
 // var HOST = location.origin.replace(/^http/, "ws");
-var HOST = "wss://104.248.60.129:3000";
+var HOST = "ws://104.248.60.129:3000";
 var connection = new WebSocket(HOST);
 
 var loginPage = document.querySelector('#login-page'),
