@@ -36,7 +36,7 @@ var httpsServer = https.createServer(options, function(request, response) {
 
 
 var WebSocketServer = require("ws").Server;
-var wss = new WebSocketServer({ server: httpsServer });
+var wss = new WebSocketServer({ server: httpsServer, clientTracking: true });
 var users = {};
 
 console.log("Server running on Port 3000");
