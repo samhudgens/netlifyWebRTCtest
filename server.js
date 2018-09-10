@@ -39,7 +39,7 @@ var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({ server: httpsServer, clientTracking: true });
 var users = {};
 
-console.log("Server running on Port 3000");
+console.log(`Server running on port ${wss.address().port}`);
 
 wss.on('connection', function(connection) {
 	console.log("User connected");
