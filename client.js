@@ -358,3 +358,7 @@ function onLeave() {
 	localConnection.onaddstream = null;
 	setupPeerConnection(stream);
 };
+
+connection.onclose = function() {
+	window.location.href = "https://boiling-reaches-6d23ba.netlify.com/"
+}
