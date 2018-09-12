@@ -2,10 +2,15 @@ var https = require('https');
 var fs = require('fs');
 var url = require('url');
 
+// var options = {
+// 	// Use readFileSync to ensure that the key and certificate are read synchronously
+//   key: fs.readFileSync('server.key'),
+//   cert: fs.readFileSync('server.crt')
+// };
+
 var options = {
-	// Use readFileSync to ensure that the key and certificate are read synchronously
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.crt')
+  key: fs.readFileSync("../../../../etc/letsencrypt/live/boiling-reaches.ml/privkey.pem"),
+  cert: fs.readFileSynce("../../../../etc/letsencrypt/live/boiling-reaches.ml/fullchain.pem")
 };
 
 const PORT = process.env.PORT || 8443;
@@ -39,7 +44,7 @@ var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({ server: httpsServer, clientTracking: true });
 var users = {};
 
-console.log(`Server running on port [port]);
+console.log(`Server running on port [port]`);
 
 wss.on('connection', function(connection) {
 	console.log("User connected");
