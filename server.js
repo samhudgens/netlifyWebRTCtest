@@ -9,8 +9,8 @@ var url = require('url');
 // };
 
 var options = {
-  key: fs.readFileSync("../../../../etc/letsencrypt/live/boiling-reaches.ml/privkey.pem"),
-  cert: fs.readFileSynce("../../../../etc/letsencrypt/live/boiling-reaches.ml/fullchain.pem")
+  key: fs.readFileSync("../../../etc/letsencrypt/live/samhudgens.com/privkey.pem"),
+  cert: fs.readFileSync("../../../etc/letsencrypt/live/samhudgens.com/fullchain.pem")
 };
 
 const PORT = process.env.PORT || 8443;
